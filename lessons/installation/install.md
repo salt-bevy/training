@@ -17,7 +17,7 @@ sudo mkdir /projects
 sudo chown $USER:staff /projects
 ```
 
-* clone the salt-bevy and lessons repos side-by-side.
+* clone the salt-bevy and training repos side-by-side.
 
 ```bash
 cd /projects

@@ -34,7 +34,7 @@ good display of what Vagrant is doing.
 #### Start your first Vagrant VM
 
 ```(bash)
-cd /projects/learn-salt/lessons/vagrant_basics
+cd /projects/training/lessons/vagrant_basics
 ls -al
 vagrant up
 ``` 
@@ -84,7 +84,7 @@ vagrant@lesson1:~$
 ```
 
 The contents of the `/vagrant` directory should look familiar to you.
-It is the same directory as `/projects/learn-salt/lessons/vagrant_basics`.
+It is the same directory as `/projects/training/lessons/vagrant_basics`.
 It is not a *copy* of that directory, it is the *same* directory.
 Any changes made by one machine are immediatly seen by the other.
 

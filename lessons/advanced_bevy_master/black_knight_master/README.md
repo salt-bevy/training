@@ -54,7 +54,7 @@ This repo is tightly integrated with that, and they must be cloned side-by-side 
 ```
 
 As soon as you have cloned that repo, all of the links below should work.  Most of your questions have answers in
-the [learn-salt lessons pages](../learn-salt/lessons/index.md).  The original for your working [Vagrantfile](../learn-salt/Vagrantfile)
+the [training lessons pages](../training/lessons/index.md).  The original for your working [Vagrantfile](../learn-salt/Vagrantfile)
 is there, along with a large collection of [salt states](../learn-salt/bevy_srv/salt) and the [pillars](../learn-salt/bevy_srv/pillar)
 to make them work. 
 

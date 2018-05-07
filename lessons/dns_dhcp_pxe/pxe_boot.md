@@ -110,19 +110,24 @@ sudo salt '*' state.apply bevy_master.test.wake_on_lan
 
 Each ethernet device, when it is manufactured, is given a number, called a MAC address,
 which is theorecically unique. The MAC address is used for all communication over the local
-network -- the group of computers which can "hear" each other.  In order to talk to distant
-computers, it must have an IP (Internet Protocol) address.
+network -- the group of computers which can "hear" each other's packets.  
+A MAC address is a 48 bit number.
+
+In order to talk to distant computers, an interface must also have an IP (Internet Protocol) address.
+The IP address is used by routers to send packets to distant networks. 
+IP version 4 (IPv4) addresses are 32 bit numbers.
+IP version 6 (IPv6) addresses are 128 bit numbers.
 
 Normally, when a computer is bootstrapped, one of the first things it does is ask a neighbor to tell
 it what its IP address should be. A nearby computer, the DHCP server, will issue an address, and
 tell the new machine what that address is, along with other basic network information.
 
 The DHCP protocol also allows for more extensive information to be passed -- such as where to
-find bootstrap information. This extended DHCP data can be sent by a different server than the
+find bootstrap information. This **extended DHCP** data can be sent by a different server than the
 one which issued the IP address. Since most computers have no need of the extra information --
 they already know how to boot themselves -- most networks have only a basic DHCP service.
 
-This subsystem is a set of Salt states to deploy an extended DHCP server to provide bootstrap information,
+This subsystem is a set of Salt states to deploy an **extended DHCP** server to provide bootstrap information,
 but allow the standard DHCP server to work as usual. Since all configuration must be based on the only fact
 the server knows about the requesting unit -- its MAC address -- the setup of the boot server is manual and
 fussy.
@@ -146,6 +151,8 @@ Vagrant VM or a Raspberry Pi. The router is set to reserve the following address
 says "For PXE booting, everything you should need is set up in the netboot/netboot.tar.gz tarball. Simply extract this tarball into the tftpd boot image directory. Make sure your dhcp server is configured to pass pxelinux.0 to tftpd as the filename to boot."
 
 For Ubuntu 16.04, this is found [in this archive](http://archive.ubuntu.com/ubuntu/dists/xenial/main/installer-amd64/current/images/netboot/netboot.tar.gz).
+
+Ubuntu 18.04 LTS is [here](http://archive.ubuntu.com/ubuntu/dists/bionic/main/installer-amd64/current/images/netboot/).
 
 For other versions, try looking in [http://help.ubuntu.com](http://help.ubuntu.com)
 in the "per architecture" installation guide. It seems that only LTS (long term support)
@@ -180,7 +187,7 @@ You can see the operation of your tftp server by
 
 You start the installation process by turning the client computer on.
 You can run a sample script using WoL to kick things off:
-`sudo salt-call state.apply bevy_master.test.full_rebuild_saltify_machine`
+`sudo salt-call state.apply bevy_master.test.rebuild_x_hw`
 
 ##### DO NOT PANIC
 
