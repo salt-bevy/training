@@ -6,3 +6,4 @@ Provisioning [IIS](IIS.md)
 
 Running Windows [in a VM](Windows_in_a_VM.md)
 
+Editing [the Windows registry](registry_edits.md)
