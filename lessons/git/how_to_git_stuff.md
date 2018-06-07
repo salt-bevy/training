@@ -8,7 +8,9 @@ and is the most difficult to use. For more information see
 [the official web site](https://git-scm.com/).
 
 Windows versions can be downloaded from
-[the official site](https://git-scm.com/downloads).
+[the official site](https://git-scm.com/downloads)
+or, more easily, install [chocoletey](https://chocolatey.org/) and type
+`choco install git.install` from a command prompt.
 
 Ubuntu Linux is often shipped with git already installed.  If not,
 just type:
@@ -16,18 +18,6 @@ just type:
     sudo apt install git
     
 MacOS ships with a version of git pre-installed.
-
-## GitHub
-
-[GitHub](https://github.com/) is a popular web site used for storing repositories of software
-which are maintained using `git`.  It is free to use for open source
-projects. Other free-to-use web sites (such as [BitBucket](https://bitbucket.org/))
-also use `git`.  
-
-Open source projects can be freely downloaded from GitHub using `http:`,
-but in order to freely send updates _to_ GitHub, or to use `scp:` protocol,
-you will need to register for a free user account, and upload an ssh private
-key to it. Instructions for this are clearly available on the site.
 
 ## git Quickstart
 
@@ -56,7 +46,27 @@ is `git commit -m "this is my comment"`.
 
 - rebase: like merge, only more complicated, but sometimes necessary.
 
-### Another Way
+### git beginner documentation
+
+Git documentation is notoriously hard to comprehend. This is partly due to the way git grew up --
+you can see a complete account of its checkered history in [WikiPedia](https://en.wikipedia.org/wiki/Git).
+
+Some of our favorite introductions are [Sitaram Chamarty's slideshow](http://gitolite.com/gcs.html#(1))
+and the traninig materials from [Tower](https://www.git-tower.com/learn/).
+
+## GitHub
+
+[GitHub](https://github.com/) is a popular web site used for storing repositories of software
+which are maintained using `git`.  It is free to use for open source
+projects. Other free-to-use web sites (such as [BitBucket](https://bitbucket.org/))
+also use `git`.
+
+Open source projects can be freely downloaded from GitHub using `http:`,
+but in order to freely send updates _to_ GitHub, or to use `scp:` protocol,
+you will need to register for a free user account, and upload an ssh private
+key to it. Instructions for this are clearly available on the site.
+
+### Another Way to operate git
 
 If you use a good Integrated Development Environment 
 (like [PyCharm](https://www.jetbrains.com/pycharm/))
