@@ -25,7 +25,7 @@ There can only be one server for extended DHCP requests on any network segment.
 
 If someone else (your IT department) is running a PXE server, 
 they will not appreciate competition. 
-Also do not compete with yourself -- like running both a hardware and virtual PXE machine. 
+Also do not compete with yourself -- like running both a hardware and virtual PXE server. 
  
 #### The Boot Server and Process
 
@@ -44,7 +44,7 @@ on the menu, that choice is run immediatly. We will take advantage of that short
 always supplying only one choice.
 
 The example files are set to operate on a small network at IP address 192.168.88.0/24. 
-A test network for this setup has been provided by an inexpensive MikroTik "hAP lite" router.
+My test network for this setup is provided by an inexpensive MikroTik "hAP lite" router.
 Almost any home router could probably be used, but the MikroTik operating software provides more
 functionality for an experienced network technician. The router provides basic DHCP service, 
 including the possibility of reserving fixed addresses for the host, bevy master, and test bed computers.
@@ -61,7 +61,7 @@ for [Wake-on-LAN](https://en.wikipedia.org/wiki/Wake-on-LAN)
 which has been extended to [work with salt-cloud](https://docs.saltstack.com/en/latest/topics/cloud/saltify.html#getting-started-with-saltify)
 starting with the [Salt Oxygen version](https://docs.saltstack.com/en/latest/topics/releases/version_numbers.html).
 
-The example files bevy_srv/pillar/bevy_settings.sls and 
+The example files bevy_srv/pillar/manual_bevy_settings.sls and 
 /etc/salt/cloud.profiles.d/saltify_demo_profiles.conf
 contain code to wake a hardware machine. Note especially that the machine which sends
 the Wake-on-LAN `magic packet` (identified by the pillar variable `wol_test_sender_id`) must be on the same network segment 
@@ -90,7 +90,7 @@ the same network segment as the client. Let's say your client's MAC address was 
 sudo salt-call network.wol 00-1a-4b-7c-2a-b2 --local
 ```
 
-If your sending computer's Salt node name were `pizero`...
+If your WoL sending computer's Salt node name were `pizero`...
 
 ```(bash)
 # on the Salt master...
@@ -109,8 +109,10 @@ sudo salt '*' state.apply bevy_master.test.wake_on_lan
 #### Beginning PXE Boot
 
 Each ethernet device, when it is manufactured, is given a number, called a MAC address,
-which is theorecically unique. The MAC address is used for all communication over the local
-network -- the group of computers which can "hear" each other's packets.  
+which is theoretically unique. The MAC address is used for all communication over the local
+network segment -- the group of computers which can "hear" each other's packets.
+A network segment will typically be computers which are connected to the same "side" of a
+router using wires, or the same wireless network SID name, or both. 
 A MAC address is a 48 bit number.
 
 In order to talk to distant computers, an interface must also have an IP (Internet Protocol) address.
@@ -125,11 +127,11 @@ tell the new machine what that address is, along with other basic network inform
 The DHCP protocol also allows for more extensive information to be passed -- such as where to
 find bootstrap information. This **extended DHCP** data can be sent by a different server than the
 one which issued the IP address. Since most computers have no need of the extra information --
-they already know how to boot themselves -- most networks have only a basic DHCP service.
+because they already know how to boot themselves -- most networks have only a basic DHCP service.
 
-This subsystem is a set of Salt states to deploy an **extended DHCP** server to provide bootstrap information,
-but allow the standard DHCP server to work as usual. Since all configuration must be based on the only fact
-the server knows about the requesting unit -- its MAC address -- the setup of the boot server is manual and
+This lesson has a set of Salt states to deploy an **extended DHCP** server to provide bootstrap information,
+but allow the standard DHCP server to work as usual. Because all configuration must be based on the **only** fact that
+the server knows about the requesting computer -- its MAC address -- the setup of the boot server is manual and
 fussy.
 
 If the PXE boot configuration is set for installing a new operating system, it can also include a reference to 
