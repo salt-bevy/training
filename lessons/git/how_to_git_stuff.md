@@ -51,7 +51,8 @@ is `git commit -m "this is my comment"`.
 Git documentation is notoriously hard to comprehend. This is partly due to the way git grew up --
 you can see a complete account of its checkered history in [WikiPedia](https://en.wikipedia.org/wiki/Git).
 
-Some of our favorite introductions are [Sitaram Chamarty's slideshow](http://gitolite.com/gcs.html#(1))
+Some of our favorite introductions are [Sitaram Chamarty's slideshow](http://gitolite.com/gcs.html#(1)),
+Pieter De Decker's [How to Git](https://howtogit.net/) website,
 and the traninig materials from [Tower](https://www.git-tower.com/learn/).
 
 ## GitHub
