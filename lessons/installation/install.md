@@ -54,19 +54,33 @@ and extended features for the `saltify` driver.
   - Salt ... will be automatically installed by the setup script if possible.
   
 - MacOS
-  Please use the installation helper of your choice to install the packages listed above.
-  
+    - Use the installation helper of your choice to install the packages listed above.
+
+    - or -- Shortcuts:
+    ```
+    ../salt-bevy/configure_machine/macos_install_brew.sh
+    ../salt-bevy/configure_machine/macos_install_P3_and_salt.sh
+    ../salt-bevy/configure_machine/macos_install_vagrant.sh
+    ```
+
 - Windows
+    - Shortcuts:
+    ```
+    ../salt-bevy/configure_machine/install_windows_python.bat
+    ../salt-bevy/configure_machine/install_windows_sudo.bat
+    ```
   - Python3 ... from [python.org](https://www.python.org/)
   The "Python Launcher for Windows" will be installed with Windows Python3.
-  Type a `py` command (rather than `python3` to run a program from the command line.
+  
+  - Type a `py` command (rather than `python3` to run a program from the command line.
   You will probably discover that the `-3` switch is not necessary in your installation.
-  - [git](https://git-scm.com/)
+  - [git](https://git-scm.com/) (also install the optional command-line tools)
   - pip3 is a module within your Python3 installation. 
-  Learn to type `py -3 -m pip install` when these lessons say `pip3 install`.
-  - ifaddr ... `py -3 -m pip install ifaddr`
-  - pyyaml ... `py -3 -m pip install pyyaml`
-  - passlib ... `py -3 -m pip install passlib`
+
+-  Learn to type `py -3 -m pip install` when these lessons say `pip3 install`.
+    - ifaddr ... `py -3 -m pip install ifaddr`
+    - pyyaml ... `py -3 -m pip install pyyaml`
+    - passlib ... `py -3 -m pip install passlib`
 
 #### MarkDown Viewer for your Browser
 

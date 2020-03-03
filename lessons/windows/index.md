@@ -7,3 +7,7 @@ Provisioning [IIS](IIS.md)
 Running Windows [in a VM](Windows_in_a_VM.md)
 
 Editing [the Windows registry](registry_edits.md)
+
+see also [installation shortcuts](../installation/install.md#installation-prerequisites)
+
+
